@@ -29,3 +29,4 @@ arch_variant_cflags += \
 
 arch_variant_ldflags := \
 	-Wl,--fix-cortex-a8
+endif
