@@ -1683,6 +1683,12 @@ bacon: otapackage
 	$(hide) $(MD5SUM) $(GLADE_TARGET_PACKAGE) > $(GLADE_TARGET_PACKAGE).md5sum
 	@echo -e ${CL_CYN}"Package Complete: $(GLADE_TARGET_PACKAGE)"${CL_RST}
 
+ifeq ($(LIQUID_CHANGELOG),true)
+# Generate changelog
+	$(hide) ./vendor/liquid/tools/changelog
+	$(hide) mv $(PRODUCT_OUT)/Changelog.txt $(PRODUCT_OUT)/$(LIQUID_VERSION)-$(TARGET_PRODUCT).txt
+endif
+
 endif    # recovery_fstab is defined
 endif    # TARGET_NO_KERNEL != true
 endif    # TARGET_DEVICE != generic*
