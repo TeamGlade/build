@@ -1685,7 +1685,31 @@ otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(GLADE_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(GLADE_TARGET_PACKAGE) > $(GLADE_TARGET_PACKAGE).md5sum
-	@echo -e ${CL_CYN}"Package Complete: $(GLADE_TARGET_PACKAGE)"${CL_RST}
+	@echo -e ${CL_CYN}""${CL_CYN}
+	@echo -e ${CL_CYN}"         GGGGGGGGGGGGGLLLLLLLLLLL                            AAA               DDDDDDDDDDDDD      EEEEEEEEEEEEEEEEEEEEEE    "${CL_CYN}
+	@echo -e ${CL_CYN}"      GGG::::::::::::GL:::::::::L                           A:::A              D::::::::::::DDD   E::::::::::::::::::::E    "${CL_CYN}
+	@echo -e ${CL_CYN}"    GG:::::::::::::::GL:::::::::L                          A:::::A             D:::::::::::::::DD E::::::::::::::::::::E    "${CL_CYN}
+	@echo -e ${CL_CYN}"   G:::::GGGGGGGG::::GLL:::::::LL                         A:::::::A            DDD:::::DDDDD:::::DEE::::::EEEEEEEEE::::E    "${CL_CYN}
+	@echo -e ${CL_CYN}"  G:::::G       GGGGGG  L:::::L                          A:::::::::A             D:::::D    D:::::D E:::::E       EEEEEE     "${CL_CYN}
+	@echo -e ${CL_CYN}" G:::::G                L:::::L                         A:::::A:::::A            D:::::D     D:::::DE:::::E                 "${CL_CYN}
+	@echo -e ${CL_CYN}" G:::::G                L:::::L                        A:::::A A:::::A           D:::::D     D:::::DE::::::EEEEEEEEEE       "${CL_CYN}
+	@echo -e ${CL_CYN}" G:::::G    GGGGGGGGGG  L:::::L                       A:::::A   A:::::A          D:::::D     D:::::DE:::::::::::::::E       "${CL_CYN}
+	@echo -e ${CL_CYN}" G:::::G    G::::::::G  L:::::L                      A:::::A     A:::::A         D:::::D     D:::::DE:::::::::::::::E       "${CL_CYN}
+	@echo -e ${CL_CYN}" G:::::G    GGGGG::::G  L:::::L                     A:::::AAAAAAAAA:::::A        D:::::D     D:::::DE::::::EEEEEEEEEE       "${CL_CYN}
+	@echo -e ${CL_CYN}" G:::::G        G::::G  L:::::L                    A:::::::::::::::::::::A       D:::::D     D:::::DE:::::E                 "${CL_CYN}
+	@echo -e ${CL_CYN}"  G:::::G       G::::G  L:::::L         LLLLLL    A:::::AAAAAAAAAAAAA:::::A      D:::::D    D:::::D E:::::E       EEEEEE     "${CL_CYN}
+	@echo -e ${CL_CYN}"   G:::::GGGGGGGG::::GLL:::::::LLLLLLLLL:::::L   A:::::A             A:::::A   DDD:::::DDDDD:::::DEE::::::EEEEEEEE:::::E    "${CL_CYN}
+	@echo -e ${CL_CYN}"    GG:::::::::::::::GL::::::::::::::::::::::L  A:::::A               A:::::A  D:::::::::::::::DD E::::::::::::::::::::E    "${CL_CYN}
+	@echo -e ${CL_CYN}"      GGG::::::GGG:::GL::::::::::::::::::::::L A:::::A                 A:::::A D::::::::::::DDD   E::::::::::::::::::::E    "${CL_CYN}
+	@echo -e ${CL_CYN}"         GGGGGG   GGGGLLLLLLLLLLLLLLLLLLLLLLLLAAAAAAA                   AAAAAAADDDDDDDDDDDDD      EEEEEEEEEEEEEEEEEEEEEE    "${CL_CYN}
+	@echo -e ${CL_CYN}""${CL_CYN}
+	@echo -e ${CL_CYN}"===========-Glade Package Complete-==========="${CL_RST}
+	@echo -e ${CL_CYN}"Zip: "${CL_MAG} $(GLADE_TARGET_PACKAGE)${CL_RST}
+	@echo -e ${CL_CYN}"MD5: "${CL_MAG}" `cat $(GLADE_TARGET_PACKAGE).md5sum | cut -d ' ' -f 1`"${CL_RST}
+	@echo -e ${CL_CYN}"Size:"${CL_MAG}" `ls -lah $(GLADE_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CL_RST}
+	@echo -e ${CL_CYN}"============================================="${CL_RST}
+	@echo -e ""
+
 
 ifeq ($(GLADE_CHANGELOG),true)
 # Generate changelog
