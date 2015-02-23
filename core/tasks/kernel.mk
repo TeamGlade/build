@@ -166,7 +166,15 @@ ifneq ($(USE_CCACHE),)
     ccache := $(strip $(wildcard $(ccache)))
 endif
 
-KERNEL_CROSS_COMPILE := CROSS_COMPILE="$(ccache) $(KERNEL_TOOLCHAIN_PATH)"
+ifneq ($(TARGET_CUSTOM_TOOLCHAIN),)
+  ifeq ($(HOST_OS),darwin)
+    KERNEL_CROSS_COMPILE := CROSS_COMPILE="$(ANDROID_BUILD_TOP)/prebuilts/gcc/darwin-x86/arm/arm-eabi-$(TARGET_CUSTOM_TOOLCHAIN)/bin/arm-eabi-"
+  else
+    KERNEL_CROSS_COMPILE := CROSS_COMPILE="$(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-$(TARGET_CUSTOM_TOOLCHAIN)/bin/arm-eabi-"
+  endif
+else
+  KERNEL_CROSS_COMPILE := CROSS_COMPILE="$(ccache) $(KERNEL_TOOLCHAIN_PATH)"
+endif
 ccache =
 
 define mv-modules
