@@ -608,7 +608,7 @@ function lunch()
     check_product $product
     if [ $? -ne 0 ]
     then
-        # if we can't find a product, try to grab it off the CM github
+        # if we can't find a product, try to grab it off the Glade github
         T=$(gettop)
         pushd $T > /dev/null
         build/tools/roomservice.py $product
@@ -719,7 +719,7 @@ function eat()
 {
     if [ "$OUT" ] ; then
         MODVERSION=$(get_build_var GLADE_VERSION)
-        ZIPFILE=cm-$MODVERSION.zip
+        ZIPFILE=glade-$MODVERSION.zip
         ZIPPATH=$OUT/$ZIPFILE
         if [ ! -f $ZIPPATH ] ; then
             echo "Nothing to eat"
@@ -756,7 +756,7 @@ EOF
     fi
     return $?
     else
-        echo "The connected device does not appear to be $CM_BUILD, run away!"
+        echo "The connected device does not appear to be $GLADE_BUILD, run away!"
     fi
 }
 
@@ -1859,7 +1859,7 @@ function installboot()
         adb shell chmod 644 /system/lib/modules/*
         echo "Installation complete."
     else
-        echo "The connected device does not appear to be $CM_BUILD, run away!"
+        echo "The connected device does not appear to be $GLADE_BUILD, run away!"
     fi
 }
 
@@ -1892,7 +1892,7 @@ function installrecovery()
         adb shell dd if=/cache/recovery.img of=$PARTITION
         echo "Installation complete."
     else
-        echo "The connected device does not appear to be $CM_BUILD, run away!"
+        echo "The connected device does not appear to be $GLADE_BUILD, run away!"
     fi
 }
 
