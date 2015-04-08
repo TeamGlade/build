@@ -1653,7 +1653,7 @@ bacon: otapackage
 	@echo -e ${CL_GRN}""${CL_GRN}
 	@echo -e ${CL_GRN}""${CL_GRN}
 	@echo -e ${CL_GRN}""${CL_GRN}
-	@echo -e ${CL_GRN}"		,o888888o.    8 8888                  .8.          8 888888888o.      8 8888888888888    "${CL_GRN}
+	@echo -e ${CL_GRN}"	     ,o888888o.    8 8888                  .8.          8 888888888o.      8 888888888888    "${CL_GRN}
 	@echo -e ${CL_GRN}"	    8888     `88.  8 8888                 .888.         8 8888    `^888.   8 8888            "${CL_GRN}
 	@echo -e ${CL_GRN}"	 ,8 8888       `8. 8 8888                :88888.        8 8888        `88. 8 8888            "${CL_GRN}
 	@echo -e ${CL_GRN}"	 88 8888           8 8888               . `88888.       8 8888         `88 8 8888            "${CL_GRN}
@@ -1666,7 +1666,12 @@ bacon: otapackage
 	@echo -e ${CL_GRN}""${CL_GRN}
 	@echo -e ${CL_GRN}""${CL_GRN}
 	@echo -e ${CL_GRN}""${CL_GRN}
-	@echo -e "Package complete: $(GLADE_TARGET_PACKAGE)"
+	@echo -e ${CL_CYN}"===========-Glade Package Complete-==========="${CL_RST}
+	@echo -e ${CL_CYN}"Zip: "${CL_MAG} $(GLADE_TARGET_PACKAGE)${CL_RST}
+	@echo -e ${CL_CYN}"MD5: "${CL_MAG}" `cat $(GLADE_TARGET_PACKAGE).md5sum | cut -d ' ' -f 1`"${CL_RST}
+	@echo -e ${CL_CYN}"Size:"${CL_MAG}" `ls -lah $(GLADE_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CL_RST}
+	@echo -e ${CL_CYN}"=============================================="${CL_RST}
+	@echo -e ""
 
 endif    # recovery_fstab is defined
 endif    # TARGET_NO_KERNEL != true
