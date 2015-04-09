@@ -1650,22 +1650,6 @@ otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(GLADE_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(GLADE_TARGET_PACKAGE) > $(GLADE_TARGET_PACKAGE).md5sum
-	@echo -e ${CL_GRN}""${CL_GRN}
-	@echo -e ${CL_GRN}""${CL_GRN}
-	@echo -e ${CL_GRN}""${CL_GRN}
-	@echo -e ${CL_GRN}"		,o888888o.    8 8888                  .8.          8 888888888o.      8 8888888888888    "${CL_GRN}
-	@echo -e ${CL_GRN}"	    8888     `88.  8 8888                 .888.         8 8888    `^888.   8 8888            "${CL_GRN}
-	@echo -e ${CL_GRN}"	 ,8 8888       `8. 8 8888                :88888.        8 8888        `88. 8 8888            "${CL_GRN}
-	@echo -e ${CL_GRN}"	 88 8888           8 8888               . `88888.       8 8888         `88 8 8888            "${CL_GRN}
-	@echo -e ${CL_GRN}"	 88 8888           8 8888              .8. `88888.      8 8888          88 8 888888888888    "${CL_GRN}
-	@echo -e ${CL_GRN}"	 88 8888           8 8888             .8`8. `88888.     8 8888          88 8 8888            "${CL_GRN}
-	@echo -e ${CL_GRN}"	 88 8888   8888888 8 8888            .8' `8. `88888.    8 8888         ,88 8 8888            "${CL_GRN}
-	@echo -e ${CL_GRN}"	 `8 8888       .8' 8 8888           .8'   `8. `88888.   8 8888        ,88' 8 8888            "${CL_GRN}
-	@echo -e ${CL_GRN}"	    8888     ,88'  8 8888          .888888888. `88888.  8 8888    ,o88P'   8 8888            "${CL_GRN}
-	@echo -e ${CL_GRN}"	     `8888888P'    8 888888888888 .8'       `8. `88888. 8 888888888P'      8 888888888888    "${CL_GRN}
-	@echo -e ${CL_GRN}""${CL_GRN}
-	@echo -e ${CL_GRN}""${CL_GRN}
-	@echo -e ${CL_GRN}""${CL_GRN}
 	@echo -e "Package complete: $(GLADE_TARGET_PACKAGE)"
 
 endif    # recovery_fstab is defined
