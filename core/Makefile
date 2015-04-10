@@ -1654,7 +1654,11 @@ otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(GLADE_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(GLADE_TARGET_PACKAGE) > $(GLADE_TARGET_PACKAGE).md5sum
-	@echo -e "Package complete: $(GLADE_TARGET_PACKAGE)"
+	@echo -e ${CL_CYN}"===========-Glade Package Complete-==========="${CL_RST}
+	@echo -e ${CL_CYN}"Zip: "${CL_MAG} $(GLADE_TARGET_PACKAGE)${CL_RST}
+	@echo -e ${CL_CYN}"MD5: "${CL_MAG}" `cat $(GLADE_TARGET_PACKAGE).md5sum | cut -d ' ' -f 1`"${CL_RST}
+	@echo -e ${CL_CYN}"Size:"${CL_MAG}" `ls -lah $(GLADE_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CL_RST}
+	@echo -e ${CL_CYN}"=============================================="${CL_RST}
 
 endif    # recovery_fstab is defined
 endif    # TARGET_NO_KERNEL != true
